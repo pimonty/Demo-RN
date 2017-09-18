@@ -12,6 +12,8 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+const HomeLView= require('./HomeListView/HomeLView');
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -24,7 +26,13 @@ export default class HomeScreen extends React.Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
 
-          <Text>List of products.</Text>
+          <View>
+           <MonoText style={styles.codeHighlightText}>
+           Products:
+           </MonoText>
+
+           <HomeLView/>
+         </View>
 
           <View style={styles.helpContainer}>
 
@@ -32,21 +40,22 @@ export default class HomeScreen extends React.Component {
               onPress={this._handleHelpPress}
               style={styles.helpLink}>
               <Text style={styles.helpLinkText}>
-                Help, it didn’t automatically reload!
+                Devoloped with Expo.
               </Text>
             </TouchableOpacity>
           </View>
+
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
-            This is a tab bar. You can edit it in:
+            Connection with the MERN project to obtain the list of products through URL.
           </Text>
 
           <View
             style={[styles.codeHighlightContainer, styles.navigationFilename]}>
             <MonoText style={styles.codeHighlightText}>
-              navigation/MainTabNavigator.js
+            -----------------------------
             </MonoText>
           </View>
         </View>
@@ -85,7 +94,7 @@ export default class HomeScreen extends React.Component {
 
   _handleHelpPress = () => {
     WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
+      'https://expo.io/'
     );
   };
 }
