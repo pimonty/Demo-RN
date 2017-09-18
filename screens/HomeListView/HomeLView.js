@@ -12,11 +12,15 @@ import {
 } from 'react-native';
 
 
+//Component in charge of render each row of products.
+//Remember: The first character is a capital letter.
+ import Rowproducts from './Rowproducts';
+
 const styles = StyleSheet.create({
   Listview: {
     flex: 1,
     padding: 12,
-    height: 290,
+    height: 310,
 
     },
 
@@ -42,7 +46,7 @@ class HomeLView extends Component {
 
   componentDidMount() {
     //const PathJson='http://server/products/product.json'
-const PathJson='http://192.168.1.69:3013/v1/productos.json'
+    const PathJson='http://192.168.1.69:3013/v1/productos.json'
     return fetch(PathJson)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -91,7 +95,9 @@ render() {
          dataSource={this.state.dataSource}
 
          //Inicialize each row
-         renderRow={(rowData) => <Text style={styles.text}>{rowData.identificador}, {rowData.price}</Text>}
+        // renderRow={(rowData) => <Text style={styles.text}>{rowData.identificador}, {rowData.price}</Text>}
+        renderRow={(data) => <Rowproducts {...data} />}
+
        />
 
      </View>
