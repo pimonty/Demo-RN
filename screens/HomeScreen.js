@@ -12,6 +12,9 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+//List View de productos
+const HomeLView= require('./HomeListView/HomeLView');
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -25,6 +28,7 @@ export default class HomeScreen extends React.Component {
           contentContainerStyle={styles.contentContainer}>
 
           <Text>List of products.</Text>
+          <HomeLView/>
 
           <View style={styles.helpContainer}>
 
@@ -32,13 +36,13 @@ export default class HomeScreen extends React.Component {
               onPress={this._handleHelpPress}
               style={styles.helpLink}>
               <Text style={styles.helpLinkText}>
-                Help, it didn’t automatically reload!
+                Devoloped with Expo.
               </Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
+        {/* <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
             This is a tab bar. You can edit it in:
           </Text>
@@ -49,7 +53,22 @@ export default class HomeScreen extends React.Component {
               navigation/MainTabNavigator.js
             </MonoText>
           </View>
-        </View>
+        </View> */}
+
+        <View style={styles.tabBarInfoContainer}>
+         <Text style={styles.tabBarInfoText}>
+           Connection with the MERN project to obtain the list of products through URL.
+         </Text>
+
+         <View
+           style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+           <MonoText style={styles.codeHighlightText}>
+           -----------------------------
+           </MonoText>
+         </View>
+       </View>
+
+       
       </View>
     );
   }
@@ -85,7 +104,7 @@ export default class HomeScreen extends React.Component {
 
   _handleHelpPress = () => {
     WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
+      'https://expo.io/'
     );
   };
 }
