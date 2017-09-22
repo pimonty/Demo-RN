@@ -46,7 +46,7 @@ class HomeLView extends Component {
 
   componentDidMount() {
     //const PathJson='http://server/products/product.json'
-    const PathJson='http://192.168.1.69:3013/v1/productos.json'
+    const PathJson='https://demoes6.herokuapp.com/v1/productos.json'
     return fetch(PathJson)
       .then((response) => response.json())
       .then((responseJson) => {
