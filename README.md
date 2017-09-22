@@ -9,7 +9,7 @@ If you have Expo on your smarthphone, scan this [code QR](https://expo.io/@fjmon
 ## Description
 
 
-This example pretends to make use of several components to show a simple interface that shows a list of products.
+This tutorial pretends to make use of several components to show a simple interface that shows a list of products.
 
 The products are obtained from [Demo-MERN](https://github.com/pimonty/Demo-MERN). This program provides all the data through JSON.
 
