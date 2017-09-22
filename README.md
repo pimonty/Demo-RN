@@ -1,7 +1,7 @@
 
 <img alt="Expo" src="screens/expo.png">
 
-The tutorial has been published in Expo. You can running this tutorial downloading [Expo](https://github.com/pimonty/Demo-MERN).
+The tutorial has been published in Expo. You can running this tutorial downloading [Expo](https://expo.io/).
 
 If you have Expo on your smarthphone, scanning this [code QR](https://expo.io/@fjmontero/Demo-RN).
 
